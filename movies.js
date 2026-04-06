@@ -1,7 +1,10 @@
 // Define the Movie class
-
+class Movie {
   // title, cast, description, rating
-
+  #title
+  #cast
+  #discription
+  #rating
   // Method to update the rating of the movie
 
   // Method to display the movie's information
@@ -14,3 +17,5 @@
 // Update the rating of the movie
 
 // Display the updated information of the movie
+
+}
