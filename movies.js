@@ -21,13 +21,25 @@ class Movie {
     let ratingHTML = "<p>Rating: " + this.#rating + "</p>"
     document.getElementById("movie-info").innerHTML += titleHTML + castHTML + descriptionHTML + ratingHTML;
   }
+  getTitle() {return this.#title}
+}
+
+let movie1 = new Movie("The Hunger Games", ["Jennifer Lawrence", "Josh Hutcherson", "Liam Hemsworth", "Woody Harrelson", "Elizabeth Banks", "Lenny Kravitz", "Stanley Tucci", "Donald Sutherland"], "The Capitol of Panem maintains its hold on its 12 districts by forcing them each to select a boy and a girl, called Tributes, to compete in a nationally televised event called the Hunger Games. Katniss Everdeen has to survive after she volunteers for her sister.", 7.2)
+let movies = [movie1];
+console.log(movies)
+
+function updateMovieRating(title, newrating) {
+  for (let i = 0; i < movies.length; i++) {
+   if (movies[i].getTitle() == title) {
+    movies[i].updateRating(newrating);
+   }
+  }
 }
 
 // Test your implementation
-let movie1 = new Movie("The Hunger Games", ["Jennifer Lawrence", "Josh Hutcherson", "Liam Hemsworth", "Woody Harrelson", "Elizabeth Banks", "Lenny Kravitz", "Stanley Tucci", "Donald Sutherland"], "The Capitol of Panem maintains its hold on its 12 districts by forcing them each to select a boy and a girl, called Tributes, to compete in a nationally televised event called the Hunger Games. Katniss Everdeen has to survive after she volunteers for her sister.", 7.2)
 // Display the initial information of the movie
 movie1.displayInfo();
 // Update the rating of the movie
-movie1.updateRating(5.5);
+updateMovieRating("The Hunger Games", 5.5);
 // Display the updated information of the movie
 movie1.displayInfo();
